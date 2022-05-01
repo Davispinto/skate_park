@@ -1,0 +1,53 @@
+<div>
+  <h1><a href="/">Skate Park</a></h1>
+
+  <div class="py-4">
+    <hr class="w-80" />
+    <section class="bg-dark"><br>
+      <table class="table w-50 m-auto bg-dark text-light">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo">
+          {{#each usuarios}}
+          <tr>
+            <td>{{@index}}</td>
+            <td><img src="/uploads/{{this.foto}}" style="width:100px;"></td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.anios_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            <td><input type="checkbox" {{#if this.estado}} checked {{/if}} onclick="cambiarStatus({{this.id}},this)">
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table><br>
+      <a href="/"><input type="button" class="button" style="margin-right: 30px" value="Home"></a><br><br>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    const cambiarStatus = async (id, e) => {
+      const estado = e.checked
+      try {
+        await axios.put("http://localhost:3000/usuarios", {
+          id,
+          estado
+        })
+        alert(estado ? "Perfil de usuario aprobado" : "Perfil de usuario en revisión")
+      } catch ({ response }) {
+        const { data } = response
+        const { error } = data
+        alert(error)
+      }
+    }
+  </script>

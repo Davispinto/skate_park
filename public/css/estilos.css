@@ -1,0 +1,108 @@
+ body {
+    background: black;
+    color: white;
+    text-align: center;
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/08/Best-Black-1920x1080-Photos.jpg");
+    background-size: 1920px;
+    height:100vh;
+    background-position: center;      
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+    background-size: cover;  
+}
+a {
+    text-decoration: none !important;
+    color: white !important;
+  }  
+  h2, h1, hr {
+        color: white;}
+
+  td, th{
+      vertical-align: middle!important;
+  }
+
+  td div{
+      background-size: cover;
+      width: 60px;
+      height: 60px;
+  }
+
+  input{
+      text-align: center;
+  }
+
+ .button{
+     display: inline-block;
+     color:#000;
+     text-decoration: none;
+     padding: 8px ;
+     border: 3px solid #3c67e3;
+     border-radius: 10px;
+    }
+
+    .button:hover{
+        animation: pulsate 1s ease-in-out;
+    }
+
+    @keyframes pulsate {
+        0%{
+            box-shadow: 0 0 25px #5ddcff, 0 0 50px #4e00c2;
+        }
+    }
+
+    .icon{
+        display: inline-block;
+        font-size: 30px;
+        animation: float 4s ease-in-out infinite;
+        color: #3c67e3;
+        margin-right: 15px;
+    }
+
+    .uno{
+        animation-delay: 0s;
+    }
+
+    .dos{
+        animation-delay: 1s;
+    }
+    
+    .tres{
+        animation-delay: 2s;
+    }
+
+    @keyframes float {
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-30%);            
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+
+
+h1{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8vh;
+    font-weight: bold;
+    letter-spacing: 1vw;
+    color: white;
+    background: url("https://swall.teahub.io/photos/small/186-1863665_white-abstract-wallpapers-phone-mytwiink-black-and-white.jpg");
+    background-size:auto 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+    from {
+        background-position: center 0;
+    }
+    to {
+        background-position: center 200%;
+    }
+}
+
